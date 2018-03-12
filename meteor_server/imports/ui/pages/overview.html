@@ -1,0 +1,16 @@
+<template name="overview">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Datum</th>
+        <th>Aktion</th>
+      </tr>
+      {{ #each scans }}
+      <tr>
+        <td>{{ uuid }}</td>
+        <td>{{ created }}</td>
+        <td><a href="/show_scan/{{ uuid }}">details</a></td>
+      </tr>
+      {{ /each }}
+    </table>
+</template>
