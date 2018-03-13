@@ -25,7 +25,7 @@ public class WiFiScan : MonoBehaviour {
         {
             CreateScan();
         }
-        MethodCall call = com.Call("wifilocation.add",
+        com.Call("wifilocation.add",
             JSONObject.CreateStringObject(guid),
             Vector3ToJSON(Camera.main.transform.position),
             networks);
@@ -34,7 +34,7 @@ public class WiFiScan : MonoBehaviour {
     private void CreateScan()
     {
         guid = System.Guid.NewGuid().ToString();
-        MethodCall call = com.Call("wifiscan.add",
+        com.Call("wifiscan.add",
             JSONObject.CreateStringObject(guid));
     }
 

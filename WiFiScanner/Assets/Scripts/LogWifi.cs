@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class LogWifi : MonoBehaviour {
     public Text DebugText;
     // Use this for initialization
-    private static LogWifi Instance;
     public int maxLogLines = 13;
     private static List<string> logList = new List<string>();
     private static List<string> newLogList = new List<string>();
@@ -15,7 +14,6 @@ public class LogWifi : MonoBehaviour {
     void Start()
     {
         DebugText = DebugText == null ? GetComponent<Text>() : DebugText;
-        Instance = this;
         DebugText.text = "";
     }
 

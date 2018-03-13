@@ -2,13 +2,14 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { WiFiLocation } from '/imports/api/wifilocation/wifilocation.js';
 import { Visualization } from '/imports/Visualization.js';
-import dat from '/imports/libs/datgui/DAT.GUI.min';
+import { Gui } from  '/imports/Gui.js';
+
 
 
 import './visualization.html';
 
 Template.visualization.onRendered(function() {
-  const gui = new dat.GUI();
+  const gui = new Gui();
   let vis = new Visualization(gui);
   $(window).resize(
     function() {

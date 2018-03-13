@@ -160,8 +160,10 @@ class Visualization extends THREE.EventDispatcher {
       let intersects = this.raycaster.intersectObjects( this.geometries );
     	if ( intersects.length > 0 ) {
         this.selection = intersects[0].object;
-
-        console.log(intersects);
+        self.gui.clear();
+        intersects.forEach(function (data) {
+          self.gui.addWiFiLocation(data.object);
+        })
 
         this.selectionChangeEvent.selection = this.selection;
         this.dispatchEvent(this.selectionChangeEvent);
@@ -223,6 +225,7 @@ class Visualization extends THREE.EventDispatcher {
   addObject(docId, newDoc, obj) {
 
     obj.docId = docId;
+    obj.data = newDoc;
 
     this.updateGeomPosition(obj, newDoc);
 
@@ -237,7 +240,7 @@ class Visualization extends THREE.EventDispatcher {
     this.addBasicGeometry(
       docId,
       newDoc,
-      new THREE.SphereGeometry( 1, 32, 32 ))
+      new THREE.SphereGeometry( .1, 32, 32 ))
   }
 }
 

@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 /*
@@ -243,6 +244,7 @@ public static partial class JSONTemplates {
 		if(obj.HasField("inTangent")) k.inTangent = obj.GetField("inTangent").n;
 		if(obj.HasField("outTangent")) k.outTangent = obj.GetField("outTangent").n;
 		if(obj.HasField("tangentMode")) k.tangentMode = (int)obj.GetField("tangentMode").n;
+        // TODO: AnimationUtility.SetKeyLeftTangentMode
 		
 		return k;
 	}

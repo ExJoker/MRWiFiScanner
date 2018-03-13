@@ -16,3 +16,7 @@
   top: 0;
   z-index: 1;
 }
+
+.dg div.close-button, .dg.main.a {
+  border: 1px solid white !important;
+}
