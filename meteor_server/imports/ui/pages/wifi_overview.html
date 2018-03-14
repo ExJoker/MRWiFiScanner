@@ -1,4 +1,4 @@
-<template name="overview">
+<template name="wifi_overview">
     <table>
       <tr>
         <th>ID</th>
@@ -9,7 +9,7 @@
       <tr>
         <td>{{ uuid }}</td>
         <td>{{ created }}</td>
-        <td><a href="/show_scan/{{ uuid }}">details</a></td>
+        <td><a href="/wifi_scan/{{ uuid }}">details</a></td>
       </tr>
       {{ /each }}
     </table>
